@@ -22,6 +22,6 @@ node {
     
     stage('Deploy Docker Image'){
       	echo "Docker Image Tag Name: ${dockerImageTag}"
-	sh "docker -H tcp://192.168.139.139:4243 run --name devopsexample -d -p 2222:2222 devopsexample:${env.BUILD_NUMBER}"
+	sh "docker -H tcp://192.168.139.139:4243 run --name devopsexample${env.BUILD_NUMBER} -d -p 2222:2222 devopsexample:${env.BUILD_NUMBER}"
     }
 }
