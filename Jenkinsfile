@@ -17,6 +17,7 @@ node {
     }
     
     stage('Build Docker Image') {
+      sh "docker -H tcp://192.168.139.139:4243 kill  devopsexample"
       sh "docker -H tcp://192.168.139.139:4243 build -t devopsexample:${env.BUILD_NUMBER} ."
     }
     
